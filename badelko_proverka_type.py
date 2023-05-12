@@ -13,7 +13,7 @@ def proverka(a):
     if type(a) is tuple:
         for i in a:
             if type(i) is str:
-                print(i, '-', len(i))
+               # print(i, '-', len(i))
                 b += len(i)
         print(f'1.Сумма длинн всех слов в кортеже {a} равна {b}.')
     elif type(a) is list:
@@ -39,7 +39,7 @@ def proverka(a):
         print(f'4. Строка {a} содержит {h} букв.')
 
 
-proverka(a=('afafaf', ['13', '141'], 'sdfnk', 'fsdfksmkf', 'sdlfnflslnf'))
-proverka(a=[234, 2, 35435, 45426, 'adf14', 2, 'sfdssff', '1414rewwe'])
-proverka(a=124314144134412133)
-proverka(a='12431shsh41441gsdfsgdfh3441sdhfsdfh2133')
+proverka(('afafaf', ['13', '141'], 'sdfnk', 'fsdfksmkf', 'sdlfnflslnf'))
+proverka([234, 2, 35435, 45426, 'adf14', 2, 'sfdssff', '1414rewwe'])
+proverka(124314144134412133)
+proverka('12431/.shsh4 1441gsdfsg/dfh3441sd? hfsdfh2133')
