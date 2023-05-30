@@ -20,10 +20,14 @@ name TEXT, release_year INT, genre Text) ''')
 # k = cursor.fetchall()
 # print(k)
 
-def add_movie(new_name, new_release_year, new_genre):
+def add_movie():
+    new_name = input('Введите название нового фильмма : ')
+    new_release_year = input('Введите год выхода нового фильмма : ')
+    new_genre = input('Введите жанр нового фильмма : ')
     cursor.execute('''INSERT INTO movies(name,release_year,genre) VALUES (?,?,?)''', (new_name, new_release_year, new_genre))
     conn.commit()
-    print('New movie added.')
+    print("\033[4m\033[37m\033[32m{}\033[0m".format('New movie added.'))
+
 
 def info_all_movie():
     cursor.execute('''SELECT * FROM movies''')
@@ -43,7 +47,7 @@ def info_movie_id(id_movie):
 
 
 while True:
-    print('''                  Добро пожаловать в нашу библиотеку фильмов!!!
+    print('''                   Добро пожаловать в нашу библиотеку фильмов!!!
                         Сделайте правильный выбор.
                          1. Добавить фильм (заполнение делать с клавиатуры)
                          2. Получения данных обо всех фильмах
@@ -51,10 +55,7 @@ while True:
                          0. Выход''')
     choise = int(input('Введите действие : '))
     if choise == 1:
-        new_name = input('Введите название нового фильмма : ')
-        new_release_year = input('Введите год выхода нового фильмма : ')
-        new_genre = input('Введите жанр нового фильмма : ')
-        add_movie(new_name, new_release_year, new_genre)
+        add_movie()
     elif choise == 2:
         info_all_movie()
     elif choise == 3:
