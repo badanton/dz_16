@@ -36,7 +36,8 @@ def info_all_movie():
         c = ','.join([str(x) for x in i])
         print("\033[4m\033[37m\033[32m{}\033[0m".format(c))
 
-def info_movie_id(id_movie):
+def info_movie_id():
+    id_movie = input('Введите id фильма : ')
     cursor.execute('''SELECT * FROM movies WHERE movie_id =? ''', (id_movie))
     k = cursor.fetchall()
     if k == []:
@@ -59,7 +60,7 @@ while True:
     elif choise == 2:
         info_all_movie()
     elif choise == 3:
-        info_movie_id(id_movie=input('Введите id фильма : '))
+        info_movie_id()
     elif choise == 0:
         print('Надеемся,что мы были полезны вам. Заходите еще.')
         break
